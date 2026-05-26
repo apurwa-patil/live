@@ -22,7 +22,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 # Base paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..'))
-MODEL_DIR = os.path.join(ROOT_DIR, 'folk_antigravity', 'models')
+MODEL_DIR = os.path.join(BASE_DIR, 'ml_models')
 TRAIN_SCRIPT_DIR = ROOT_DIR
 
 # Create uploads directory if it doesn't exist
@@ -289,6 +289,5 @@ def health_check():
         "status": "healthy",
         "models_loaded": vectorizer is not None and clf is not None and encoder is not None and metadata_map is not None
     })
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5001)

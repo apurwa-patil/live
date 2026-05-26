@@ -16,6 +16,7 @@ dist/
 
 # Ignore ALL pickle/model files
 *.pkl
+!backend/ml_models/*.pkl
 *.joblib
 
 # Ignore model directories
